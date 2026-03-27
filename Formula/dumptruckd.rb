@@ -14,24 +14,26 @@ class Dumptruckd < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/Saadlulu/dumptruckd/releases/download/v0.1.0/dumptruckd_0.1.0_darwin_amd64.tar.gz"
-      sha256 "fd55d71f6a7f09e789718d2d683b00084d15ae5bed8b5aa91df5ceeefb4167d1"
+      sha256 "07bc2f650f64c76803e69c4dea62dadc1d6299aa100d61e2cf5440a1b02eb62d"
 
       define_method(:install) do
         bin.install "dumptruckd"
-        etc.install "config/dumptruckd.toml.example" => "dumptruckd/dumptruckd.toml.example"
-        etc.install "config/example-single-file.toml" => "dumptruckd/example-single-file.toml"
-        etc.install "examples/dumptruckd.service" => "dumptruckd/dumptruckd.service"
+        (etc/"dumptruckd").mkpath
+        (etc/"dumptruckd").install "config/dumptruckd.toml.example"
+        (etc/"dumptruckd").install "config/example-single-file.toml"
+        (etc/"dumptruckd").install "examples/dumptruckd.service"
       end
     end
     if Hardware::CPU.arm?
       url "https://github.com/Saadlulu/dumptruckd/releases/download/v0.1.0/dumptruckd_0.1.0_darwin_arm64.tar.gz"
-      sha256 "9fa4c9d74e63a232235ac4b5fe02f9a030ae10fc56c4357380e02aeb6c807bcc"
+      sha256 "f22566a349a0a96fa1c7502e4eeb80128685b04ed4d5949224df816a25e8ab4b"
 
       define_method(:install) do
         bin.install "dumptruckd"
-        etc.install "config/dumptruckd.toml.example" => "dumptruckd/dumptruckd.toml.example"
-        etc.install "config/example-single-file.toml" => "dumptruckd/example-single-file.toml"
-        etc.install "examples/dumptruckd.service" => "dumptruckd/dumptruckd.service"
+        (etc/"dumptruckd").mkpath
+        (etc/"dumptruckd").install "config/dumptruckd.toml.example"
+        (etc/"dumptruckd").install "config/example-single-file.toml"
+        (etc/"dumptruckd").install "examples/dumptruckd.service"
       end
     end
   end
@@ -39,32 +41,35 @@ class Dumptruckd < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/Saadlulu/dumptruckd/releases/download/v0.1.0/dumptruckd_0.1.0_linux_amd64.tar.gz"
-      sha256 "d7059a936bdd5994cc331f80e4b2f5371bc55066d415adc06a7b7238c3a5b0dc"
+      sha256 "1dc080e2b4536e54bb69b5c86e14d60a29a469f3902e2d5ed281795930b8186b"
       define_method(:install) do
         bin.install "dumptruckd"
-        etc.install "config/dumptruckd.toml.example" => "dumptruckd/dumptruckd.toml.example"
-        etc.install "config/example-single-file.toml" => "dumptruckd/example-single-file.toml"
-        etc.install "examples/dumptruckd.service" => "dumptruckd/dumptruckd.service"
+        (etc/"dumptruckd").mkpath
+        (etc/"dumptruckd").install "config/dumptruckd.toml.example"
+        (etc/"dumptruckd").install "config/example-single-file.toml"
+        (etc/"dumptruckd").install "examples/dumptruckd.service"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/Saadlulu/dumptruckd/releases/download/v0.1.0/dumptruckd_0.1.0_linux_armv6.tar.gz"
-      sha256 "b633ca4c02f11c3b6a73827dbdee575c4a7560fa60548fceb33b188e8cfbce2e"
+      sha256 "5821ad9ee779e70a53c0fc34e3892223e70f7ca41706885eac970d40b309e57e"
       define_method(:install) do
         bin.install "dumptruckd"
-        etc.install "config/dumptruckd.toml.example" => "dumptruckd/dumptruckd.toml.example"
-        etc.install "config/example-single-file.toml" => "dumptruckd/example-single-file.toml"
-        etc.install "examples/dumptruckd.service" => "dumptruckd/dumptruckd.service"
+        (etc/"dumptruckd").mkpath
+        (etc/"dumptruckd").install "config/dumptruckd.toml.example"
+        (etc/"dumptruckd").install "config/example-single-file.toml"
+        (etc/"dumptruckd").install "examples/dumptruckd.service"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/Saadlulu/dumptruckd/releases/download/v0.1.0/dumptruckd_0.1.0_linux_arm64.tar.gz"
-      sha256 "bec606f7ac69097abbaf1c58a754da26f7194761034fced38d48f2659dee491c"
+      sha256 "a8621dcbca4bbc9e66b66f4c1ea40867925ae30c86d7e1decd166c8d8df5fa31"
       define_method(:install) do
         bin.install "dumptruckd"
-        etc.install "config/dumptruckd.toml.example" => "dumptruckd/dumptruckd.toml.example"
-        etc.install "config/example-single-file.toml" => "dumptruckd/example-single-file.toml"
-        etc.install "examples/dumptruckd.service" => "dumptruckd/dumptruckd.service"
+        (etc/"dumptruckd").mkpath
+        (etc/"dumptruckd").install "config/dumptruckd.toml.example"
+        (etc/"dumptruckd").install "config/example-single-file.toml"
+        (etc/"dumptruckd").install "examples/dumptruckd.service"
       end
     end
   end
