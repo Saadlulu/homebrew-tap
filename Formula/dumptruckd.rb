@@ -5,7 +5,7 @@
 class Dumptruckd < Formula
   desc "A modular database backup daemon"
   homepage "https://github.com/Saadlulu/dumptruckd"
-  version "0.2.2"
+  version "0.3.0"
   license "MIT"
 
   depends_on "mysql-client" => :optional
@@ -13,8 +13,8 @@ class Dumptruckd < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Saadlulu/dumptruckd/releases/download/v0.2.2/dumptruckd_0.2.2_darwin_amd64.tar.gz"
-      sha256 "6fc4dccaa65661b5ed4ffc5e9eae5a26c3713ff26a5c7ba5607de8b42bb3a835"
+      url "https://github.com/Saadlulu/dumptruckd/releases/download/v0.3.0/dumptruckd_0.3.0_darwin_amd64.tar.gz"
+      sha256 "7f98a715ad6e0393f09a1006cb711d669330d1ccfa7f9d9933cd70829fadeb8b"
 
       define_method(:install) do
         bin.install "dumptruckd"
@@ -25,8 +25,8 @@ class Dumptruckd < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Saadlulu/dumptruckd/releases/download/v0.2.2/dumptruckd_0.2.2_darwin_arm64.tar.gz"
-      sha256 "913e898e21d9cc99e19f854ce191575f63daebc9ecde4480d325b3a004f7d9a9"
+      url "https://github.com/Saadlulu/dumptruckd/releases/download/v0.3.0/dumptruckd_0.3.0_darwin_arm64.tar.gz"
+      sha256 "b49bc08ec394c602303da4c10fb9d6fe78daaf2d83ec9195632916dc8bf05118"
 
       define_method(:install) do
         bin.install "dumptruckd"
@@ -40,8 +40,8 @@ class Dumptruckd < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Saadlulu/dumptruckd/releases/download/v0.2.2/dumptruckd_0.2.2_linux_amd64.tar.gz"
-      sha256 "00dd68e4d6c27ad40285411d15ee53a2f5cfa7d3270abe288cfaad2b97ffc661"
+      url "https://github.com/Saadlulu/dumptruckd/releases/download/v0.3.0/dumptruckd_0.3.0_linux_amd64.tar.gz"
+      sha256 "2c919d531e54088c8eb26fc01631a8ff3e4af1db0045275bc6f59e7365a78599"
       define_method(:install) do
         bin.install "dumptruckd"
         (etc/"dumptruckd").mkpath
@@ -51,8 +51,8 @@ class Dumptruckd < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/Saadlulu/dumptruckd/releases/download/v0.2.2/dumptruckd_0.2.2_linux_armv6.tar.gz"
-      sha256 "06dede783dc949082eede39457b3ea4ef18d503d684474a013b1646fc1fd8730"
+      url "https://github.com/Saadlulu/dumptruckd/releases/download/v0.3.0/dumptruckd_0.3.0_linux_armv6.tar.gz"
+      sha256 "eebb432e9ca82810757ac6df4b33d8433e2ce0405d7aec67dec0ebb4d0d70052"
       define_method(:install) do
         bin.install "dumptruckd"
         (etc/"dumptruckd").mkpath
@@ -62,8 +62,8 @@ class Dumptruckd < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Saadlulu/dumptruckd/releases/download/v0.2.2/dumptruckd_0.2.2_linux_arm64.tar.gz"
-      sha256 "5bc66b44a81476910df78605669834bacb5f9cf2fb8bc760569b37ab7e4d7b22"
+      url "https://github.com/Saadlulu/dumptruckd/releases/download/v0.3.0/dumptruckd_0.3.0_linux_arm64.tar.gz"
+      sha256 "940e87c369caeabacc6114c73c7927d5b05e9ee0f342e06e5657a92e376f94be"
       define_method(:install) do
         bin.install "dumptruckd"
         (etc/"dumptruckd").mkpath
